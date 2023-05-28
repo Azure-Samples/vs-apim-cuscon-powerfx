@@ -1,0 +1,69 @@
+@page "/"
+
+<PageTitle>Our Products</PageTitle>
+
+<h1>Our Products</h1>
+
+<p>Browse our list of spare parts.</p>
+
+@if (productList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ItemId<br />&nbsp;</th>
+                <th>Name<br />&nbsp;</th>
+                <th>Description<br />&nbsp;</th>
+                <th>Price<br />&nbsp;</th>
+
+                @foreach (var column in powerFxColumns)
+                {
+                    <th>@column.Key<br /><u>[ <a @onclick="e => RemoveColumn(column.Key)">Remove</a> ]</u></th>
+                }
+
+                <th>&nbsp;<br /><u>[ <a @onclick="ShowDialog">Add Column</a> ]</u></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in productList)
+            {
+                <tr>
+                    <td>@product.ItemId</td>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+
+                    @foreach (var column in powerFxColumns)
+                    {
+                        <td>@product.CalculatedColumns[column.Key]</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @if (showDialog)
+    {
+        <div class="overlay">
+            <div class="overlay-content">
+                <p>
+                    New Column Name:<br />
+                    <input type="text" @bind="columnName" size="50">
+                </p>
+                <p>
+                    Power Fx Expression:<br />
+                    <textarea @bind="columnExpression" rows="10" cols="100"></textarea><br />
+                    <button @onclick="AddColumn">Add Column</button> &nbsp; <button @onclick="CloseDialog">Cancel</button>
+                </p>
+
+                <div>
+                    @errors
+                </div>
+            </div>
+        </div>
+    }
+}
