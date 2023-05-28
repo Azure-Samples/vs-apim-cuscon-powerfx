@@ -1,57 +1,26 @@
-# Project Name
+# Visual Studio + Power Platform Custom Connector + PowerFx + Azure API Management
 
-(short, 1-3 sentenced, description of the project)
+This shows a sample application architecture that shows:
 
-## Features
+- A back-end API app (ASP.NET Core Web API) running inventory management that Visual Studio directly exports a Power Platform custom connector is directly exported from Visual Studio,
+- A front-end app (Blazor WebAssembly) that uses the PowerFx syntax through the Power Platform custon connector, and
+- A back-end API app (ASP.NET Core Web API) running GitHub issue summary that Visual Studio directly publishes to Azure App Service and integrates it with Azure API Management.
 
-This project framework provides the following features:
 
-* Feature 1
-* Feature 2
-* ...
+## Acknowledgement
+
+This repository consolidates both:
+
+- [Marcel Ferreira](https://twitter.com/marcel_ferreira)'s [InventAPI](https://github.com/marcelbf/InventAPI) and
+- [Azure Samples](https://github.com/Azure-Samples)' [ASP.NET Web API for Power Platform Custom Connector (feat. Azure OpenAI Service)](https://github.com/Azure-Samples/aspnet-web-api-for-power-platform-custom-connector)
+
+Both repositories were demo'd at [//Build 2023](https://aka.ms/build23/brk272h).
+
 
 ## Getting Started
 
-### Prerequisites
+For more details of how to run each application, please visit:
 
-(ideally very short, if any)
+- [InventAPI](https://github.com/marcelbf/InventAPI) and
+- [ASP.NET Web API for Power Platform Custom Connector (feat. Azure OpenAI Service)](https://github.com/Azure-Samples/aspnet-web-api-for-power-platform-custom-connector)
 
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
-
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
