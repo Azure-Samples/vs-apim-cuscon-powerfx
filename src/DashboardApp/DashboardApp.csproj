@@ -9,6 +9,7 @@
       https://pkgs.dev.azure.com/Power-Fx/7dd30b4a-31be-4ac9-a649-e6addd4d5b0a/_packaging/PowerFx/nuget/v3/index.json
     </RestoreAdditionalProjectSources>
 
+    <UserSecretsId>8edb9303-5769-4629-9db3-eb5efdad41a2</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

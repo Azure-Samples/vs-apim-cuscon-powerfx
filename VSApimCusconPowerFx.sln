@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DashboardApp", "src\Dashboa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryApi", "src\InventoryApi\InventoryApi.csproj", "{801746EE-6C31-4CCD-A228-14C70EFE08BE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IssueSummaryApi", "src\IssueSummaryApi\IssueSummaryApi.csproj", "{602F3618-94DE-405D-A51F-1818A5352CE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{801746EE-6C31-4CCD-A228-14C70EFE08BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{801746EE-6C31-4CCD-A228-14C70EFE08BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{801746EE-6C31-4CCD-A228-14C70EFE08BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602F3618-94DE-405D-A51F-1818A5352CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602F3618-94DE-405D-A51F-1818A5352CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602F3618-94DE-405D-A51F-1818A5352CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602F3618-94DE-405D-A51F-1818A5352CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{70A11A0D-48B2-4962-8596-1884A2BB7708} = {70A90582-CAE8-400C-91B1-03F901C652A2}
 		{801746EE-6C31-4CCD-A228-14C70EFE08BE} = {70A90582-CAE8-400C-91B1-03F901C652A2}
+		{602F3618-94DE-405D-A51F-1818A5352CE7} = {70A90582-CAE8-400C-91B1-03F901C652A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A49D6BD1-7CD5-4689-B1F5-97C1BD16C28B}

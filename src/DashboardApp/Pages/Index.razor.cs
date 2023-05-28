@@ -18,10 +18,12 @@ namespace DashboardApp.Pages
         private string? columnName;
         private string? columnExpression;
 
-        //// Power Fx interpreter and type marshaller members
-        //RecalcEngine? engine;
-        //TypeMarshallerCache? cache;
-        //ITypeMarshaller? productType;
+        // ⬇️⬇️⬇️ Uncomment: Power Fx interpreter and type marshaller members
+        //private RecalcEngine? engine;
+
+        //private TypeMarshallerCache? cache;
+        //private ITypeMarshaller? productType;
+        // ⬆️⬆️⬆️ Uncomment: Power Fx interpreter and type marshaller members
 
         private string errors = string.Empty;
 
@@ -32,23 +34,26 @@ namespace DashboardApp.Pages
         {
             productList = await Http.GetFromJsonAsync<Product[]>("sample-data/products.json");
 
-            //// Initialize Power Fx interpreter RecalcEngine
+            // ⬇️⬇️⬇️ Uncomment: Initialize Power Fx interpreter RecalcEngine
             //var config = new PowerFxConfig(Features.PowerFxV1);
             //engine = new RecalcEngine(config);
+            // ⬆️⬆️⬆️ Uncomment: Initialize Power Fx interpreter RecalcEngine
 
-            //// Initialize out type marshaller cache
+            // ⬇️⬇️⬇️ Uncomment: Initialize out type marshaller cache
             //cache = new TypeMarshallerCache();
             //productType = cache.GetMarshaller(typeof(Product));
+            // ⬆️⬆️⬆️ Uncomment: Initialize out type marshaller cache
 
-            //// Create strongly-typed Power Fx objects from the swagger
-            //var swagger = await Http.GetStringAsync(
-            //    "https://inventapi.azurewebsites.net/swagger/v1/swagger.json");
+            // ⬇️⬇️⬇️ Uncomment: Create strongly-typed Power Fx objects from the swagger
+            //var swagger = await Http.GetStringAsync("https://localhost:5051/swagger/v1/swagger.json");
             //var openAPIDoc = new OpenApiStringReader().Read(swagger, out OpenApiDiagnostic diag);
-            //var client = new HttpClient { BaseAddress = new Uri("https://inventapi.azurewebsites.net") };
-            //// Add the service to the Power Fx configuration as "InventAPI_Connector"
-            //config.AddService("InventAPI_Connector", openAPIDoc, client);
+            //var client = new HttpClient { BaseAddress = new Uri("https://localhost:5051") };
 
-            //// Sum( InventAPI_Connector.GetInventOnHand( ItemId ), numberInStock )
+            //// Add the service to the Power Fx configuration as "InventoryAPI_Connector"
+            //config.AddService("InventoryAPI_Connector", openAPIDoc, client);
+            // ⬆️⬆️⬆️ Uncomment: Create strongly-typed Power Fx objects from the swagger
+
+            // Sum( InventoryAPI_Connector.GetItemsOnHand( ItemId ), numberInStock )
         }
 
         protected async Task AddColumn(string name, string expression)
@@ -59,13 +64,17 @@ namespace DashboardApp.Pages
             {
                 foreach (var product in productList)
                 {
+                    // ⬇️⬇️⬇️ Comment: When to use PowerFx
                     var value = string.Empty;
+                    // ⬆️⬆️⬆️ Comment: When to use PowerFx
 
+                    // ⬇️⬇️⬇️ Uncomment: Evaluate the expression for each product
                     //var value = (await engine.EvalAsync(
                     //    expression,
                     //    cancellationToken: default,
                     //    productType.Marshal(product) as RecordValue
                     //)).ToObject().ToString();
+                    // ⬆️⬆️⬆️ Uncomment: Evaluate the expression for each product
 
                     product.CalculatedColumns.Add(name, value);
                 }
