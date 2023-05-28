@@ -34,7 +34,7 @@ jobs:
       run: dotnet test -c Release
 
     - name: Publish
-      run: dotnet publish src/WebApi -c Release -o publish
+      run: dotnet publish src/IssueSummaryApi -c Release -o publish
 
     - name: Azure Login
       uses: Azure/login@v1
